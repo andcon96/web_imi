@@ -37,20 +37,14 @@
                         <button class="btn btn-primary px-4" type="submit">{{ __('Login') }}</button>
                     </div>
                     </form>
-                    <div class="col-6 text-right">
-                        <a href="{{ route('password.request') }}" class="btn btn-link px-0">{{ __('Forgot Your Password?') }}</a>
-                    </div>
                     </div>
               </div>
             </div>
-            <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+            <div class="card text-white py-2 d-md-down-none" style="width:44%; background-color:rgba(0, 0, 102, 0.8)">
               <div class="card-body text-center">
                 <div>
-                  <h2>Sign up</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  @if (Route::has('password.request'))
-                    <a href="{{ route('register') }}" class="btn btn-primary active mt-3">{{ __('Register') }}</a>
-                  @endif
+                  <h2>Module IMI</h2>
+                  <img src="{{asset('img/logo.png')}}" alt="">
                 </div>
               </div>
             </div>

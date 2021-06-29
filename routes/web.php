@@ -58,19 +58,27 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/badge', function(){    return view('dashboard.notifications.badge'); });
             Route::get('/modals', function(){   return view('dashboard.notifications.modals'); });
         });
+
         Route::resource('notes', 'NotesController');
+
+        Route::resource('resource/{table}/resource', 'ResourceController')->names([
+            'index'     => 'resource.index',
+            'create'    => 'resource.create',
+            'store'     => 'resource.store',
+            'show'      => 'resource.show',
+            'edit'      => 'resource.edit',
+            'update'    => 'resource.update',
+            'destroy'   => 'resource.destroy'
+        ]);
     });
     Auth::routes();
 
-    Route::resource('resource/{table}/resource', 'ResourceController')->names([
-        'index'     => 'resource.index',
-        'create'    => 'resource.create',
-        'store'     => 'resource.store',
-        'show'      => 'resource.show',
-        'edit'      => 'resource.edit',
-        'update'    => 'resource.update',
-        'destroy'   => 'resource.destroy'
-    ]);
+    Route::get('/halo',function(){
+        $roles = \Spatie\Permission\Models\Role::all();
+        $users = \App\Models\User::with('roles')->get();
+        
+        dd($roles,$users);
+    });
 
     Route::group(['middleware' => ['role:admin']], function () {
         Route::resource('bread',  'BreadController');   //create BREAD (resource)

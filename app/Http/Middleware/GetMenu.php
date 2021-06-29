@@ -45,6 +45,8 @@ class GetMenu
         }else{
             $role = 'guest';
         }
+
+        // dd($role,$userRoles,$roleHierarchy);
         //session(['prime_user_role' => $role]);
         $menus = new GetSidebarMenu();
         $menulists = Menulist::all();

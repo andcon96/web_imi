@@ -71,6 +71,8 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->name       = $request->input('name');
         $user->email      = $request->input('email');
+        $user->menuroles      = $request->input('role');
+        $user->assignRole($request->input('role'));
         $user->save();
         $request->session()->flash('message', 'Successfully updated user');
         return redirect()->route('users.index');

@@ -3,15 +3,15 @@
 @section('content')
 
         <div class="container-fluid">
-          <div class="animated fadeIn">
+          <div class="animated fade-in">
             <div class="row">
-              <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+              <div class="col-sm-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                      <i class="fa fa-align-justify"></i>{{ __('Users') }}</div>
+                      <i class="fa fa-align-justify"></i> <h4>{{ __('Users') }}</h4></div>
                     <div class="card-body">
                         <table class="table table-responsive-sm table-striped">
-                        <thead>
+                        <thead style="background-color:#c8c8c8;">
                           <tr>
                             <th>Username</th>
                             <th>E-mail</th>
